@@ -1,0 +1,78 @@
+.searchBox {
+    display: flex;
+    /* height: 30vh; */
+    /* width: 20vw; */
+    background-color: aquamarine;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+}
+.searchBox>h1{
+    color: aliceblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.search-input {
+    outline: none;
+    font-size: medium;
+    padding: .8rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.search-input:active {
+    border: none;
+}
+
+.search {
+    padding: .7rem;
+    margin: .8rem;
+    border-radius: 10px;
+    border: none;
+    transition: all 1s;
+}
+
+.search:hover {
+    transform: scale(1.05);
+}
+.search:active{
+    color: aliceblue;
+    background-color: rgb(32, 31, 31);
+}
+
+
+.mainDiv{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    /* grid-template-rows: auto auto; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    transition: 2s;
+    /* gap: 10px; */
+  }
+  
+  @media screen and (max-width: 600px) {
+    .mainDiv{
+      display: grid;
+  justify-content: center;
+  align-items: center;
+      grid-template-columns: 1fr ;
+    grid-template-rows: 1fr ;
+  
+      transition: 2s;
+    }
+  }
