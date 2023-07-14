@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SearchWeather.css";
 import axios from "axios";
 import WeatherCard from "../WeatherCard/WeatherCard";
