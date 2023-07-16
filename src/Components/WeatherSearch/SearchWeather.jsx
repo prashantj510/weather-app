@@ -2,29 +2,34 @@ import React, { useEffect, useState } from "react";
 import "./SearchWeather.css";
 import axios from "axios";
 import WeatherCard from "../WeatherCard/WeatherCard";
+import "./loading.css"
+import Loader from "./Loader";
+
 
 const SearchWeather = () => {
   const apiKey = "216138c74d3d18643fbd5cd27eb457f7";
   const [data, setData] = useState({});
   const [inputCity, setInputCity] = useState("");
+  const [loading, setLoading] = useState(true);
   const getWeather = (cityName) => {
     if (!cityName) return;
-    const apiURL =
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
-      cityName +
-      "&appid=" +
-      apiKey;
-    axios
-      .get(apiURL)
-      .then((response) => {
+    try {
+      setLoading(true);
+      const apiURL =
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+        cityName +
+        "&appid=" +
+        apiKey;
+      axios.get(apiURL).then((response) => {
         // handle success
-        console.log("response", response);
+        // console.log("response", response);
         setData(response.data);
-      })
-      .catch((error) => {
-        // handle error
-        console.error("error", error);
       });
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.error("error", error);
+    }
   };
 
   useEffect(() => {
@@ -46,6 +51,11 @@ const SearchWeather = () => {
 
   return (
     <div className="searchDiv">
+    {/* <Loader/> */}
+      <div>{
+        loading?<Loader/>:<></>
+      }</div>
+
       <div className="mainDiv">
         <WeatherCard
           weatherTemp={data?.main?.temp}
@@ -53,7 +63,6 @@ const SearchWeather = () => {
           maxTemp={data?.main?.temp_max}
           CityName={data?.name}
         />
-       
       </div>
       <form className="form" onSubmit={submitHandler}>
         <div className="input-wrapper">
