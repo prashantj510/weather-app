@@ -10,6 +10,8 @@ const SearchWeather = () => {
   const [data, setData] = useState({});
   const [inputCity, setInputCity] = useState("");
   const [loading, setLoading] = useState(false);
+ const [icon,setIcon]=useState("")
+  const [weatherInfo,setWeatherInfo]=useState("")
   const getWeather = (cityName) => {
     if (!cityName) return;
     try {
@@ -21,8 +23,11 @@ const SearchWeather = () => {
         apiKey;
       axios.get(apiURL).then((response) => {
         // handle success
-        console.log("response", response.data.weather);
+        console.log("response", response.data);
+        console.log(response.data.weather[0].main)
         setData(response.data);
+        setWeatherInfo(response.data.weather[0].main)
+        setIcon(response.data.weather[0].icon)
       });
       setLoading(false);
     } catch (error) {
@@ -62,6 +67,8 @@ const SearchWeather = () => {
                 minTemp={data?.main?.temp_min}
                 maxTemp={data?.main?.temp_max}
                 CityName={data?.name}
+                weatherInfo={weatherInfo}
+                icon={icon}
               />
             </div>
             <form className="form" onSubmit={submitHandler}>
