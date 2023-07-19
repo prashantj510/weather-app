@@ -12,19 +12,19 @@ const SearchWeather = () => {
   const [loading, setLoading] = useState(false);
  const [icon,setIcon]=useState("")
   const [weatherInfo,setWeatherInfo]=useState("")
-  const getWeather = (cityName) => {
+  const getWeather = async(cityName) => {
     if (!cityName) return;
     try {
       setLoading(true);
-      const apiURL =
+     const apiURL =
         "https://api.openweathermap.org/data/2.5/weather?q=" +
         cityName +
         "&appid=" +
         apiKey;
-      axios.get(apiURL).then((response) => {
+      await axios.get(apiURL).then((response) => {
         // handle success
         console.log("response", response.data);
-        console.log(response.data.weather[0].main)
+        // console.log(response.data.weather[0].main)
         setData(response.data);
         setWeatherInfo(response.data.weather[0].main)
         setIcon(response.data.weather[0].icon)
@@ -51,6 +51,7 @@ const SearchWeather = () => {
   };
   const handleSearch = () => {
     getWeather(inputCity);
+    setInputCity("");
   };
 
   return (
