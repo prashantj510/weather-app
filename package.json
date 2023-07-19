@@ -1,7 +1,7 @@
 {
   "name": "weather-app",
   "homepage": "https://prashantj510.github.io/weather-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.3",
