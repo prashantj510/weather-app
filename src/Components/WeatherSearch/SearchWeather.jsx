@@ -10,13 +10,13 @@ const SearchWeather = () => {
   const [data, setData] = useState({});
   const [inputCity, setInputCity] = useState("");
   const [loading, setLoading] = useState(false);
- const [icon,setIcon]=useState("")
-  const [weatherInfo,setWeatherInfo]=useState("")
-  const getWeather = async(cityName) => {
+  const [icon, setIcon] = useState("");
+  const [weatherInfo, setWeatherInfo] = useState("");
+  const getWeather = async (cityName) => {
     if (!cityName) return;
     try {
       setLoading(true);
-     const apiURL =
+      const apiURL =
         "https://api.openweathermap.org/data/2.5/weather?q=" +
         cityName +
         "&appid=" +
@@ -26,8 +26,8 @@ const SearchWeather = () => {
         console.log("response", response.data);
         // console.log(response.data.weather[0].main)
         setData(response.data);
-        setWeatherInfo(response.data.weather[0].main)
-        setIcon(response.data.weather[0].icon)
+        setWeatherInfo(response.data.weather[0].main);
+        setIcon(response.data.weather[0].icon);
       });
       setLoading(false);
     } catch (error) {
@@ -70,6 +70,7 @@ const SearchWeather = () => {
                 CityName={data?.name}
                 weatherInfo={weatherInfo}
                 icon={icon}
+                country={data?.sys?.country}
               />
             </div>
             <form className="form" onSubmit={submitHandler}>

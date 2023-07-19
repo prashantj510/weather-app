@@ -3,6 +3,7 @@ body {
     background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
     margin: 0;
     padding: 0;
+    /* align-items: center; */
 }
 
 /* *{

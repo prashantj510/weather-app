@@ -5,7 +5,7 @@ const WeatherCard = (props) => {
  const iconURL= "https://openweathermap.org/img/wn/"+props.icon+"@2x.png";
   return (
     <div className="card">
-      <p className="city">{props.CityName}</p>
+      <p className="city">{props.CityName}{<h4 className="h2country">{props.country}</h4>}</p>
       <h1 className="weather">{props.weatherInfo}</h1>
       <img className="WeatherIcon" src={iconURL} alt="" />
       <p className="temp">{(props.weatherTemp - 273.15).toFixed(2)}°C</p>

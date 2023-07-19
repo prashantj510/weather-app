@@ -1,87 +1,101 @@
+.card {
+  /* position: relative; */
+  width: 50vw;
+  height: auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  /* align-self: center; */
+  /* justify-self: center; */
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  background-color: rgba(65, 65, 65, 0.308);
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  cursor: pointer;
+  /* margin-top: 50px; */
+  margin: 1rem;
+  transition: all 1s;
+}
 
+@media screen and (max-width: 600px) {
   .card {
-    /* position: relative; */
-    width: 50vw;
-    height: auto;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 10px;
-    border-radius: 10px;
-    backdrop-filter: blur(30px);
-    background-color: rgba(65, 65, 65, 0.308);
-    border: 1px solid rgba(255, 255, 255, 0.089);
-    cursor: pointer;
-    /* margin-top: 50px; */
-    margin: 1rem;
-    transition: all 1s;
+    width: 90vw;
   }
-  @media screen and (max-width: 600px) {
-    .card{width: 90vw;}
-  }
-  .city {
-    font-weight: 900;
-    font-size: 3.7rem;
-    
-    letter-spacing: 1.2px;
-    color: white;
-    margin: 0rem 0rem;
-  }
-  
-  .weather {
-    font-weight: 500;
-    font-size: 2rem;
-    letter-spacing: 1.2px;
-    color: rgb(197, 197, 197);
-    margin: 0.1rem;
-  }
-  .WeatherIcon{
-    margin: 0;
-    width: 170px;
-    /* color:whitesmoke; */
-  }
-  .temp {
-    font-size: 3em;
-    font-family: Impact, 'Arial Narrow Bold', sans-serif;
-    font-weight: bolder;
-    color: white;
-    margin: 0.1rem;
-  }
-  
-  .minmaxContainer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .min,.max {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0px 20px;
-    gap: 4px;
-  }
-  
-  .max {
-    align-items: flex-start;
-    border-left: 2px solid white;
-  }
-  
-  .maxHeading,.minHeading {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: white;
-  }
-  
-  .maxTemp,.minTemp {
-    font-size: 1.5em;
-    font-weight: 500;
-    color: rgb(197, 197, 197);
-  }
-  
-  
+}
+
+.city {
+  font-weight: 900;
+  font-size: 3.7rem;
+  display: inline-flex;
+
+  letter-spacing: 1.2px;
+  color: white;
+  margin: 0rem 0rem;
+}
+
+.h2country {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  font-size: medium;
+
+}
+
+.weather {
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+  color: rgb(197, 197, 197);
+  margin: 0.1rem;
+}
+
+.WeatherIcon {
+  margin: 0;
+  width: 170px;
+  /* color:whitesmoke; */
+}
+
+.temp {
+  font-size: 3em;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-weight: bolder;
+  color: white;
+  margin: 0.1rem;
+}
+
+.minmaxContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.min, .max {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0px 20px;
+  gap: 4px;
+}
+
+.max {
+  align-items: flex-start;
+  border-left: 2px solid white;
+}
+
+.maxHeading, .minHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.maxTemp, .minTemp {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: rgb(197, 197, 197);
+}
