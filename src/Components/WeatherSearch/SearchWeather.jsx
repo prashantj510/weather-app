@@ -4,6 +4,8 @@ import axios from "axios";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import "./loading.css";
 import Loader from "./Loader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SearchWeather = () => {
   const apiKey = "216138c74d3d18643fbd5cd27eb457f7";
@@ -32,6 +34,8 @@ const SearchWeather = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
+      // alert(error);
+      toast.error("City Name Not Found!!",error);
       console.error("error", error);
     }
   };
@@ -112,6 +116,18 @@ const SearchWeather = () => {
           </>
         )}
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+      />
     </div>
   );
 };
