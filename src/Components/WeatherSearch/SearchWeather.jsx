@@ -35,7 +35,7 @@ const SearchWeather = () => {
     } catch (error) {
       setLoading(false);
       // alert(error);
-      toast.error("City Name Not Found!!",error);
+      toast.error("City Name Not Found!!", error);
       console.error("error", error);
     }
   };
@@ -43,7 +43,6 @@ const SearchWeather = () => {
   useEffect(() => {
     getWeather("delhi");
   }, []);
-  
 
   const changeHandler = (e) => {
     console.log("value", e.target.value);

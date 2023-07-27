@@ -55,7 +55,7 @@
 .WeatherIcon {
   margin: 0;
   width: 170px;
-  /* color:whitesmoke; */
+
 }
 
 .temp {
@@ -66,27 +66,6 @@
   margin: 0.1rem;
 }
 
-/* .minmaxContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
-
-/* .min, .max {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0px 20px;
-  gap: 4px;
-} */
-
-/* .max {
-  align-items: flex-start;
-  border-left: 2px solid white;
-} */
 
 .minHeading {
   font-size: 1em;
@@ -103,7 +82,7 @@
 .WeatherDetails {
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   position: relative;
   /* margin: 1em; */
@@ -116,12 +95,12 @@
     align-items: start;
   }
 
-  .minDIv, .maxDiv, .humidityDiv, .windSpeedDiv ,.feelsLike{
+  .minDIv, .maxDiv, .humidityDiv, .windSpeedDiv, .feelsLike {
     width: max-content;
   }
 }
 
-.minDIv, .maxDiv, .humidityDiv, .windSpeedDiv,.feelsLike {
+.minDIv, .maxDiv, .humidityDiv, .windSpeedDiv, .feelsLike {
   height: 8em;
   width: 6em;
   /* background-color: azure; */
