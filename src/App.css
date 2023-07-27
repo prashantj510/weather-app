@@ -1,31 +1,42 @@
 body {
-  background-color: #212121;
-  margin: 0;
-  padding: 0;
+    /* background-color: #212121; */
+    background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+    margin: 0;
+    padding: 0;
+    /* align-items: center; */
 }
+
 /* *{
     border: 1px solid red;
 } */
 /* html{} */
 
 
-  ::-webkit-scrollbar {
-      width: 0.5em;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 1em;
-  }
-  
-  /* Add custom styling for the thumb */
-  ::-webkit-scrollbar-thumb:hover {
-      background-color: #555;
-  }
-  
-  /* Enable scrolling on the element */
-  .scrollable-element {
-      overflow-y: scroll;
-  }
-  
+::-webkit-scrollbar {
+    width: 0.5em;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 1em;
+}
+
+/* Add custom styling for the thumb */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Enable scrolling on the element */
+.scrollable-element {
+    overflow-y: scroll;
+}
+
+
+.player {
+    /* display: block; */
+    position: absolute;
+    justify-self: center;
+    z-index: -100;
+    height: 100vh;
+    width: 100vw;
+}
