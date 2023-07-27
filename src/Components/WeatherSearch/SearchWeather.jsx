@@ -76,6 +76,9 @@ const SearchWeather = () => {
                 weatherInfo={weatherInfo}
                 icon={icon}
                 country={data?.sys?.country}
+                humidity={data?.main?.humidity}
+                windSpeed={data?.wind?.speed}
+                feelsLike={data?.main?.feels_like}
               />
             </div>
             <form className="form" onSubmit={submitHandler}>
