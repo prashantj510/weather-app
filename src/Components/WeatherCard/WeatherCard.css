@@ -1,12 +1,9 @@
 .card {
-  /* position: relative; */
   width: 50vw;
   height: auto;
   display: flex;
   position: relative;
   flex-direction: column;
-  /* align-self: center; */
-  /* justify-self: center; */
   align-items: center;
   justify-content: center;
   padding: 10px 10px;
@@ -15,9 +12,8 @@
   background-color: rgba(65, 65, 65, 0.308);
   border: 1px solid rgba(255, 255, 255, 0.089);
   cursor: pointer;
-  /* margin-top: 50px; */
   margin: 1rem;
-  transition: all 1s;
+  transition: all 3s;
 }
 
 @media screen and (max-width: 600px) {
@@ -29,19 +25,15 @@
 .city {
   font-weight: 900;
   font-size: 3.7rem;
-  display: inline-flex;
-
   letter-spacing: 1.2px;
   color: white;
   margin: 0rem 0rem;
 }
 
 .h2country {
-  display: inline-flex;
   margin: 0;
   padding: 0;
   font-size: medium;
-
 }
 
 .weather {
@@ -55,7 +47,6 @@
 .WeatherIcon {
   margin: 0;
   width: 170px;
-
 }
 
 .temp {
@@ -65,7 +56,6 @@
   color: white;
   margin: 0.1rem;
 }
-
 
 .minHeading {
   font-size: 1em;
@@ -84,26 +74,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: relative;
-  /* margin: 1em; */
   flex-wrap: wrap;
-}
-
-@media screen and (max-width: 800px) {
-  .WeatherDetails {
-    /* flex-wrap: wrap; */
-    align-items: start;
-  }
-
-  .minDIv, .maxDiv, .humidityDiv, .windSpeedDiv, .feelsLike {
-    width: max-content;
-  }
 }
 
 .minDIv, .maxDiv, .humidityDiv, .windSpeedDiv, .feelsLike {
   height: 8em;
   width: 6em;
-  /* background-color: azure; */
   border-radius: 1em;
   text-align: center;
   margin: 0.10em;
@@ -116,4 +92,49 @@
 .windSpeedSup {
   font-size: 0.4em;
   color: rgb(197, 197, 197);
+}
+
+/* Skeleton loader styles */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.skeleton-text {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  width: 70%;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-temp {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  width: 60%;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  width: 170px;
+  height: 170px;
+  margin-bottom: 1rem;
+}
+
+.detail-box {
+  height: 8em;
+  width: 6em;
+  border-radius: 1em;
+  text-align: center;
+  margin: 0.10em;
+  padding: 0.1em;
+  backdrop-filter: blur(30px);
+  background-color: rgba(65, 65, 65, 0.308);
+  border: 1px solid rgba(255, 255, 255, 0.089);
 }
