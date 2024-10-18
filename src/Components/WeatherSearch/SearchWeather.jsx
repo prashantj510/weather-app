@@ -18,10 +18,20 @@ const SearchWeather = () => {
       const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
       const response = await axios.get(apiURL);
       setWeather(response.data);
-      setLoading(false);
     } catch (error) {
       setLoading(false);
-      toast.error("City Name Not Found!");
+      if (error.response) {
+        // If the error is related to the response (like 404)
+        toast.error("City Name Not Found!");
+      } else if (error.request) {
+        // If the error is related to the request (like network issues)
+        toast.error("Network Error! Please check your connection.");
+      } else {
+        // Any other error
+        toast.error("An error occurred. Please try again.");
+      }
+    } finally {
+      setLoading(false);
     }
   }, [apiKey]);
 
@@ -55,10 +65,9 @@ const SearchWeather = () => {
             humidity={weather?.main?.humidity}
             windSpeed={weather?.wind?.speed}
             feelsLike={weather?.main?.feels_like}
-            isLoading={loading}  // pass the loading state to WeatherCard
+            isLoading={loading} // Pass the loading state to WeatherCard as isLoading
           />
         </div>
-
         <form className="form" onSubmit={handleSearch}>
           <div className="input-wrapper">
             <button className="icon" type="submit">
@@ -96,7 +105,6 @@ const SearchWeather = () => {
           </div>
         </form>
       </div>
-
       <ToastContainer
         position="top-center"
         autoClose={2000}
